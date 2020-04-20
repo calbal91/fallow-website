@@ -1,0 +1,1066 @@
+body { 
+	font-family: 'Barlow', Helvetica, sans-serif;
+	margin: 0px;
+	width: 100%;
+	height: 100vh;
+	color: #ffffff;
+	background: linear-gradient(75deg, #9D2EC5, #2CBDFE, #47DBCD);
+	background-size: 300% 300%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	animation: gradientBG 20s ease infinite;
+  position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+	}
+
+/* Control background colour animation */
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h1 {
+
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+p {
+
+  font-size: 1em;
+}
+
+footer {
+  position: fixed;
+  left: 5px;
+  bottom: 5px;
+  font-size: 12px;
+  margin: auto;
+  opacity: 0.7;
+}
+
+.heroText {
+  font-family: Helvetica, sans-serif;
+  font-weight: bolder;
+  position: absolute;
+  display: block;
+  font-size: calc(16px + 1.8vw);
+  letter-spacing: -2px;
+  line-height: 90%;
+  text-align: right;
+  padding: 10px 20px;
+  color: rgba(255,255,255,0.4)
+}
+
+.helloText {
+
+  color: rgba(255,255,255,0.8);
+}
+
+.helloText a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+}
+
+.helloText a:hover {
+  font-style: italic;
+  color: rgba(157,46,197,0.85);
+}
+
+.homeButtons {
+  display: relative;
+  margin: auto;
+  width: 100%;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  background: rgb(157,46,197); /* Fallback for older browsers without RGBA-support */
+  background: rgba(157,46,197, 0.9);
+  color: white;
+
+  outline-style: solid;
+  outline-color: #ffffff;
+  outline-width: 2px;
+
+  font-size: calc(16px + 0.3vw);
+  font-weight: 550;
+  text-align: center;
+  text-decoration: none;
+
+  width: 25%;
+  max-width: 150px;
+  padding: 12px 0px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #661D98;
+  color: white;
+  text-decoration: none;
+}
+
+.button:active {
+  background-color: #661D98;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  transform: translateY(2px);
+}
+
+
+/* The home page split screen */
+
+.leftside, .rightside {
+  height:100vh;
+  overflow-y: hidden;
+}
+
+.smallLogo {
+
+    display: none;
+}
+
+.centerLogo {
+  display: block;
+  max-width: 500px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+}
+
+.normalArt {
+  position: fixed;
+  height: 90%;
+  max-height: 550px;
+  width: 95%;
+  bottom: 0;
+  left: 25%;
+}
+
+
+/* For small screens... */
+
+@media screen and (max-width:767px)
+{
+  .smallLogo {
+    display: block;
+    max-width: 250px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  .leftside, .rightside {
+    height:50vh;
+    width:100%;
+  }
+
+  .centerLogo {
+    display: none;
+  }
+
+  .heroText {
+  text-align: center;
+  font-size: 70px;
+  font-size: 6vw;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+/* For very small screens... */
+
+@media screen and (max-width:412px)
+{
+  .smallLogo {
+    display: block;
+    max-width: 250px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  .button {
+    width: 30%;
+    padding: 8px 0px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+  }
+
+}
+
+/* Kill DS&ML text if short window */
+
+@media screen and (max-height: 650px)
+{
+  .centerLogo {
+    display: none;
+  }
+
+  .smallLogo {
+    display: block;
+    max-width: 250px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+}
+
+/* For very small horizontal screens... */
+
+@media screen and (max-height: 540px) and (max-width:767px) 
+{
+  .centerLogo {
+    display: none;
+  }
+
+  .smallLogo {
+    display: block;
+    max-width: 250px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  .leftside{
+    height:100vh;
+    width:100%;
+  }
+
+  .rightside {
+    height: 0vh;
+    display: none;
+  }
+}
+
+/* Adjust the homescreen artwork on ipads... */
+
+@media screen and (min-height: 1010px) and (max-width:769px) 
+{
+  .normalArt {
+    height: 70%;
+    width: 150%;
+    left: 0%;
+  }
+}
+
+/* Adjust the homescreen artwork on ipad pros... */
+
+@media screen and (min-height: 1110px) and (max-width:840px) 
+{
+  .normalArt {
+    height: 80%;
+    width: 150%;
+    left: -20%;
+  }
+}
+
+/* Adjust the homescreen artwork on phablets... */
+
+@media screen and (max-height: 900px) and (max-width:415px) 
+{
+  .normalArt {
+    height: 80%;
+    width: 210%;
+    left: -40%;
+  }
+}
+
+
+/* PROJECTS PAGE */
+
+/* Projects header */
+
+.projectsHeader {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.projectsHeaderLogo {
+  display: inline-block;
+  max-width: 300px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  width: 40%;
+}
+
+.projectsHeaderText {
+  display: inline-block;
+  position: absolute;
+  text-align: right;
+  line-height: 0.95;
+  margin-top: 3%;
+  margin-right: 20px;
+}
+
+.projectsHeaderTitle {
+  font-weight: bolder;
+  display: inline-block;
+  font-size: calc(24px + 6vw);
+  letter-spacing: -2px;
+}
+
+.projectsHeaderSub {
+  display: inline-block;
+  font-size: calc(20px + 1vw);
+}
+
+.projectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 0px;
+}
+
+.projectCard {
+  position: relative;
+  text-align: center;
+  font-size: calc(16px + 0.6vw);
+  color: white;
+}
+
+.projectImage {
+  position: relative;
+  text-align: center;
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+  transition-duration: 0.4s;
+  -webkit-filter: grayscale(100%) contrast(90%); /* Safari */
+  filter: grayscale(100%) contrast(90%);
+}
+
+.projectImage:hover {
+  -webkit-filter: grayscale(0%) contrast(100%); /* Safari */
+  filter: grayscale(0%) contrast(100%);
+}
+
+.projectCardOverlay {
+  opacity: 0.9;
+  position: absolute;
+  background-color: #2CBDFE;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.4s;
+  padding: 15px 15px 15px 15px;
+}
+
+/* Responsive layout - quite big screens */
+@media screen and (max-width: 1300px) {
+  .projectImage {
+    height: 350px;
+  }
+  .projectCards {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+/* Responsive layout - small screens */
+@media screen and (max-width: 544px){
+
+  .projectsHeaderLogo {
+    display: block;
+    max-width: 250px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  .projectsHeaderText {
+    position: relative;
+    text-align: center;
+    line-height: 0.95;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .projectImage {
+    height: 210px;
+  }
+}
+
+
+/* PROJECT PAGES */
+
+
+.projectHead {
+  position: relative;
+  margin: 0 auto; /* Center it */
+  text-align: right;
+}
+
+.projectHeadImage {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  -webkit-filter: grayscale(100%) contrast(90%); /* Safari */
+  filter: grayscale(100%) contrast(90%);
+}
+
+.thrones {
+
+  object-position: 100% 10%;
+}
+
+.projectHeadText {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  color: #ffffff; /* White text */
+  width: 100%; /* Full width */
+  padding: 6px; /* Some padding */
+  padding-left: 20%;
+  padding-right: 20px;
+  font-weight: bolder;
+  font-size: calc(16px + 4vw);
+}
+
+.highlightedText {
+  background-color: rgb(157,46,197); /* Fallback color */
+  background-color: rgba(157,46,197, 0.6);
+  text-transform: uppercase;
+}
+
+.projectContent {
+  width: 90%;
+  padding: 30px;
+  padding-top: 50px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.projectContent h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.projectContent p, li {
+  font-size: 1.2em;
+}
+
+.projectContent span {
+  font-weight: 650;
+  font-style: italic;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.projectContent a, .cvContent a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.inlineImage {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  max-width: 700px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.backToProjects, .viewProjects {
+  position: -webkit-sticky;
+  position: sticky;
+  background: rgb(157,46,197); /* Fallback for older browsers without RGBA-support */
+  background: rgba(157,46,197, 0.9);
+
+  outline-style: solid;
+  outline-color: #ffffff;
+  outline-width: 2px;
+
+  color: #ffffff;
+  font-size: calc(14px + 0.8vw);
+  text-align: center;
+  text-decoration: none;
+
+  top: 40px;
+  transition-duration: 0.4s;
+  padding: 5px 10px 5px 9px;
+  z-index: 50;
+}
+
+.viewProjects {
+  position: absolute;
+  height: 100px;
+  width: 140px;
+  top: 25px;
+  right: 20px;
+/*  border-radius: 100%;*/
+  outline-style: none;
+  opacity: 0.8;
+  box-shadow: 0 0 0 2pt white;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  line-height: 0.98;
+  padding-top: 26px;
+  margin: auto;
+}
+
+
+.backToProjects:hover, .viewProjects:hover {
+  background: rgba(44,189,254, 1);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.viewProjects:hover {
+  transform: scale(1.03)
+  
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 50px;
+  background-size: 100%, 100%;
+  background-image: none;
+  font-size: calc(20px + 3vw);
+  color: rgba(157,46,197, 0.7);
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-style: normal;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-style: normal;
+}
+
+.carousel-indicators:after {
+  color: #9D2EC5;
+}
+
+.carousel-indicators li {
+  background-color: #9D2EC5;
+  background-color: rgba(157,46,197, 0.25);
+}
+
+.carousel-indicators .active {
+  background-color: #9D2EC5;
+}
+
+.blog {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.blogEmbed{
+  font-family: helvetica, sans-serif;  
+  position:relative;
+  width:90%;
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.blogEmbed:hover{
+
+  transform: scale(1.01);
+}
+
+.tdsImage {
+  position: absolute;
+  border-radius: 50%;
+  width: calc(50px + 4vw);
+  margin-top: 8px;
+  margin-left: 8px;
+  opacity: 0.9;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.blogImage {
+  object-fit: cover;
+  object-position: 100% 10%;
+  width: 100%;
+  height: 250px;
+  padding: 15px;
+  z-index: 9;
+}
+
+.blogEmbed a {
+  position: relative;
+  color: #055975;
+  text-decoration: none;
+  font-size: calc(10px + 0.6vw);
+  z-index: 10;
+}
+
+.blogEmbed a:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+.callumBlogLink {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.blogEmbed h1 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  text-transform: none;
+  font-weight: bold;
+  font-size: calc(14px + 1vw);
+}
+
+.blogEmbed h2 {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  color: #666666;
+  font-style: italic;
+  font-size: calc(10px + 1vw);
+} 
+
+
+.youtube {
+
+  margin-bottom: 30px;
+}
+
+
+@media screen and (max-width:415px)
+{
+  .projectContent {
+    width: 100%;
+    padding: 15px;
+    padding-top: 30px;
+    margin: auto; /* Center it */
+  }
+
+  .projectHeadText {
+    padding-left: 10%;
+    padding-right: 10px;
+  }
+
+  .projectContent p, li {
+  font-size: 1em;
+  }
+
+  .blogImage {
+  height: 200px;
+  }
+
+  .blogEmbed{
+    width:100%;
+    margin-bottom: 100px;
+  }
+
+  .backToProjects {
+    top: 20px;
+  }
+
+  .youtube {
+
+    width: 100%;
+  }
+
+}
+
+
+/* CV PAGE */
+
+/* CV header */
+
+.cvContent {
+  width: 95%;
+  padding: 30px;
+  padding-top: 50px;
+  max-width: 1200px;
+  margin: auto; /* Center it */
+}
+
+.cvHead {
+  position: relative;
+  margin: auto; /* Center it */
+}
+
+.cvHead p {
+
+  font-size: calc(12px + 0.8vw)
+}
+
+.cbPortrait {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  -webkit-filter: grayscale(100%) contrast(120%); /* Safari */
+  filter: grayscale(100%) contrast(120%);
+}
+
+.cbPortraitSmall {
+  -webkit-filter: grayscale(100%) contrast(120%); /* Safari */
+  filter: grayscale(100%) contrast(120%);
+  display: none;
+}
+
+.cvHead .cvHeadText {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #ffffff; /* White text */
+  width: 100%; /* Full width */
+  padding: 6px; /* Some padding */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cvSummary {
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: calc(20px + 1vw);
+  line-height: 0.98;
+}
+
+.cvContent h3 {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.subList {
+  font-size: 0.95em;
+  color: #9D2EC5;
+  list-style-type: square;
+}
+
+/* CV cards */
+
+.cvCards { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1.5fr));
+  grid-gap: 24px;
+  align-items: stretch;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  }
+
+.grid > .cvCard {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.grid > .cvCard img {
+
+  max-width: 100%;
+}
+
+.cvCard {
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  text-align: center;
+  background-color: #ffffff;
+  color: #2CBDFE;
+  -webkit-transition-duration: 0.1s; /* Safari */
+  transition: transform .1s; /* Animation */
+}
+
+.cvCardText {
+  padding-top: 40px;
+  padding-bottom: 35px;
+}
+
+.cvCardText h2 {
+
+  font-size: calc(40px+0.5vw)
+}
+
+.cvCard:hover {
+
+  transform: scale(1.02)
+}
+
+.cvCardHelper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.cvCardImage {
+  width: 100%;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.minorRoyals {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* For very small screens... */
+
+@media screen and (max-width:415px)
+{
+  .cvContent {
+    width: 100%;
+    padding: 0px;
+    padding-top: 0px;
+    max-width: 1000px;
+    margin: auto; /* Center it */
+  }
+
+  .cvHead {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .cbPortrait {
+  display: none;
+  }
+
+  .cbPortraitSmall {
+    display: inline;
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .cvSummary, .cvCards {
+    width: 90%;
+    margin-left: auto; /* Center it */
+    margin-right: auto;
+  }
+
+  .cvCardImage {
+    max-height: 150px;
+  }
+
+  .cvTitles {
+  text-align: center;
+  }
+}
+
+.modal-body, .modal-title {
+
+  color: black;
+}
+
+
+
+/* The floating contact button */
+
+.contactIcon {
+  width: 75%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.contactButton {
+  z-index: 995;
+  display: absolute;
+  position: fixed;
+  bottom: 10px;
+  right: 16px;
+  text-align: center;
+  background-color: #47DBCD;
+  opacity: 0.92;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.contactNav {
+  transform: scale(0,0);
+  transition: all 0.3s ease-in-out;
+  transform-origin: bottom right;
+  -webkit-transition-duration: 0.4s; /* Safari */
+
+  z-index: 994;
+  display: inline-block;
+  position: fixed;
+  bottom:50px;
+  right:50px;
+  opacity: 0;
+
+  text-align: left;
+  background: #ffffff;
+  border-radius: 16px;
+  height: 230px;
+  width: 180px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.contactNav a{
+  padding: 12px 12px 12px 20px;
+  text-decoration: none;
+  font-size: 26px;
+  line-height: 95%;
+  letter-spacing: 90%;
+  color: #2CBDFE;
+  display: block;
+  transition: 0.3s;
+}
+
+.contactNav a:hover {
+
+  color: #9D2EC5;
+}
+
+#toggle {
+
+  display: none;
+}
+
+#toggle:checked ~ .contactNav {
+  transform: scale(1,1);
+  opacity: 1;
+}
+
+#toggle:checked ~ .contactButton {
+  transform: rotate(-270deg);
+  opacity: 1;
+  box-shadow: 0 0 0 0 transparent;
+  background-color: #9D2EC5;
+}
+
+.contactButton:hover {
+  background-color: #3ec2b5;
+  text-decoration: none;
+  opacity: 1;
+  transform: scale(1.1)
+}
+
+/* For very small screens... */
+
+@media screen and (max-width:412px)
+{
+  .contactButton {
+  bottom:15px;
+  right:15px;
+  }
+}
+
+
+/* The side navigation menu */
+.hamburgerIcon {
+  z-index: 999;
+  position:absolute;
+  padding-top: 15px; /* Place content 15px from the top */
+  padding-left: 20px; /* Place content 20px from the left */
+  transition: 0.5s;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 80px; /* Place content 70px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2);
+  opacity: 0.93;
+}
+
+hr {
+  margin: auto;
+  border-top: 1px solid #2CBDFE;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 12px 12px 12px 12px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 32px;
+  color: #2CBDFE;
+  display: block;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  transform: scale(1.03);
+  color: #9D2EC5;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-bottom: 10px;
+  font-size: calc(50px + 3vw);
+}
+
+
+@media screen and (max-width:415px)
+{
+  .sidenav a {
+    padding: 8px 8px 8px 8px;
+    font-size: 28px;
+  }
+}

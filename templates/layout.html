@@ -1,0 +1,79 @@
+<!DOCTYPE html lang="en">
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+	<link href='https://fonts.googleapis.com/css?family=Playfair-Display' rel='stylesheet'>
+
+	<script src="{{url_for('static', filename='script.js')}}"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:title" content="Fallow Jobs"/>
+
+	<meta property="og:description" content="Fallow aims to provide a stepping stone into employment for those with mental health difficulties through outdoor work"/>
+
+	<meta property="og:image" content="{{url_for('static', filename='image_webpreview.png')}}"/>
+
+	<title>
+	Fallow Jobs
+	</title>
+
+</head>
+<body>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	<div id="sidebar">
+	    <li id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+			<a href="/home" class="hline"><img src="{{url_for('static', filename='fallow_logo_alpha.png')}}" alt="Fallow" class="sidebarLogo"></a>
+			<hr width="40%">
+			<a href="/projects" class="hline">About Us</a>
+			<hr width="40%">
+			<a href="/cv" class="hline">For Fallowers</a>
+			<hr width="40%">
+			<a href="https://towardsdatascience.com/@callumballard" target="_blank" class="hline">For Farmers</a>
+		</li>
+
+		<!-- Use any element to open the sidenav -->
+		<!--span onclick="openNav()">open</span>-->
+		<img id="myHamburger" class="hamburgerIcon"
+		src="{{url_for('static', filename='image_menu_bars.png')}}"
+		alt="MENU"
+		width="60" height="70"
+		onclick="openNav()">
+    </div>
+
+
+
+	<div class="contactContainer">
+	  <input type="checkbox" id="toggle" />
+	    <label class="contactButton" for="toggle">
+	    	<img src="{{url_for('static', filename='image_chat.png')}}" alt="Contact" class="contactIcon">
+		</label>
+		<div class="contactNav">
+			<a href="mailto:callumjballard@gmail.com?Subject=Hello%20CB91" target="_top">Send a message</a>
+				<a href="https://www.linkedin.com/in/callum-ballard/" target="_blank">Connect on LinkedIn</a>
+			<a href="https://towardsdatascience.com/@callumballard" target="_blank">Follow on Medium</a>
+		</div>
+	</div>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+	<div id="main">
+	    {% block content %}
+		{% endblock %}
+	</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

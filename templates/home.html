@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <div class="projectsHeader">
+
+    <img src="{{url_for('static', filename='image_header.jpg')}}" alt="Fallow" class="projectsHeaderImage">
+
+    <a href="/home" class="hline"><img src="{{url_for('static', filename='fallow_logo_alpha.png')}}" alt="Fallow" class="projectsHeaderLogo"></a>
+
+    <div class="projectsHeaderText">
+      <p class="projectsHeaderTitle">Lorem ipsum dolor sit, consectetur</p>
+    </div>
+
+  </div>
+
+  <div class="projectsSub">
+      <div class="projectSubCard">Quisque nec eleifend tellus. Maecenas nec sapien ut lorem venenatis mattis. Vestibulum nulla elit, venenatis non eros ac, tristique tempor diam.</div>
+
+      <div class="projectSubCard">Quisque nec eleifend tellus. Maecenas nec sapien ut lorem venenatis mattis. Vestibulum nulla elit, venenatis non eros ac, tristique tempor diam.</div>
+
+      <div class="projectSubCard">Quisque nec eleifend tellus. Maecenas nec sapien ut lorem venenatis mattis. Vestibulum nulla elit, venenatis non eros ac, tristique tempor diam.</div>    
+
+  </div>
+
+
+  <div class="projectCards">
+
+    <a href="/fallowers">
+      <div class="projectCard">        
+        <img src="{{url_for('static', filename='image_fallower.jpg')}}" alt="CB91" class="projectImage">
+        <div class="projectCardOverlay">
+          For Fallowers
+        </div>
+      </div>
+    </a>
+
+    <a href="/farmers">
+      <div class="projectCard">        
+        <img src="{{url_for('static', filename='image_farmer.jpg')}}" alt="CB91" class="projectImage">
+        <div class="projectCardOverlay">
+          For Farmers
+        </div>
+      </div>
+    </a>
+
+  </div>
+ 
+
+{% endblock content %}
