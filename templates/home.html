@@ -1,15 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
 
-  <div class="projectsHeader">
 
-    <img src="{{url_for('static', filename='image_header.jpg')}}" alt="Fallow" class="projectsHeaderImage">
+<!--   <img src="{{url_for('static', filename='image_header.jpg')}}" alt="Fallow" class="projectsHeaderImage"> -->
+
+  <video autoplay muted loop id="myVideo">
+    <source src="{{url_for('static', filename='TestVideo.mp4')}}" type="video/mp4">
+  </video>
+
+  <div class="projectsHeader">
 
     <a href="/home" class="hline"><img src="{{url_for('static', filename='fallow_logo_alpha.png')}}" alt="Fallow" class="projectsHeaderLogo"></a>
 
     <div class="projectsHeaderText">
-      <p class="projectsHeaderTitle">Lorem ipsum dolor sit, consectetur</p>
+      <h1 class="projectsHeaderTitle">Working towards better mental health</h1>
+
+      <p>Fallow aims to provide a stepping stone into employment for those with mental health difficulties through outdoor work - a mid point between care farming and a part time job.</p>
     </div>
+
+
 
   </div>
 

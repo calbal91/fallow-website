@@ -1,5 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+
+
 body { 
-	font-family: 'Playfair Display', Helvetica, sans-serif;
+	font-family: 'Playfair Display', 'Roboto', sans-serif;
 	margin: 0px;
 	width: 100%;
 	height: 100vh;
@@ -32,7 +35,8 @@ h4 {
 }
 
 p {
-
+  font-family: 'Roboto';
+  font-weight: 100;
   font-size: 1em;
 }
 
@@ -45,251 +49,25 @@ footer {
   opacity: 0.7;
 }
 
-.heroText {
-  font-family: Helvetica, sans-serif;
-  font-weight: bolder;
-  position: absolute;
-  display: block;
-  font-size: calc(16px + 1.8vw);
-  letter-spacing: -2px;
-  line-height: 90%;
-  text-align: right;
-  padding: 10px 20px;
-  color: rgba(255,255,255,0.4)
-}
-
-.helloText {
-
-  color: rgba(255,255,255,0.8);
-}
-
-.helloText a {
-  text-decoration: none;
-  color: rgba(255,255,255,0.9);
-}
-
-.helloText a:hover {
-  font-style: italic;
-  color: rgba(157,46,197,0.85);
-}
-
-.homeButtons {
-  display: relative;
-  margin: auto;
-  width: 100%;
-  padding: 20px 0px;
-  text-align: center;
-}
-
-.button {
-  display: inline-block;
-  background: rgb(157,46,197); /* Fallback for older browsers without RGBA-support */
-  background: rgba(157,46,197, 0.9);
-  color: white;
-
-  outline-style: solid;
-  outline-color: #ffffff;
-  outline-width: 2px;
-
-  font-size: calc(16px + 0.3vw);
-  font-weight: 550;
-  text-align: center;
-  text-decoration: none;
-
-  width: 25%;
-  max-width: 150px;
-  padding: 12px 0px;
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-
-.button:hover {
-  background-color: #661D98;
-  color: white;
-  text-decoration: none;
-}
-
-.button:active {
-  background-color: #661D98;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
-  transform: translateY(2px);
-}
-
-
-/* The home page split screen */
-
-.leftside, .rightside {
-  height:100vh;
-  overflow-y: hidden;
-}
-
-.smallLogo {
-
-    display: none;
-}
-
-.centerLogo {
-  display: block;
-  max-width: 500px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 55%;
-}
-
-.normalArt {
-  position: fixed;
-  height: 90%;
-  max-height: 550px;
-  width: 95%;
-  bottom: 0;
-  left: 25%;
-}
-
-
-/* For small screens... */
-
-@media screen and (max-width:767px)
-{
-  .smallLogo {
-    display: block;
-    max-width: 250px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-
-  .leftside, .rightside {
-    height:50vh;
-    width:100%;
-  }
-
-  .centerLogo {
-    display: none;
-  }
-
-  .heroText {
-  text-align: center;
-  font-size: 70px;
-  font-size: 6vw;
-  }
-
-  footer {
-    display: none;
-  }
-}
-
-/* For very small screens... */
-
-@media screen and (max-width:412px)
-{
-  .smallLogo {
-    display: block;
-    max-width: 250px;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-  }
-
-  .button {
-    width: 30%;
-    padding: 8px 0px;
-    margin-left: 6px;
-    margin-right: 6px;
-    margin-bottom: 10px;
-  }
-
-}
-
-/* Kill DS&ML text if short window */
-
-@media screen and (max-height: 650px)
-{
-  .centerLogo {
-    display: none;
-  }
-
-  .smallLogo {
-    display: block;
-    max-width: 250px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-}
-
-/* For very small horizontal screens... */
-
-@media screen and (max-height: 540px) and (max-width:767px) 
-{
-  .centerLogo {
-    display: none;
-  }
-
-  .smallLogo {
-    display: block;
-    max-width: 250px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-
-  .leftside{
-    height:100vh;
-    width:100%;
-  }
-
-  .rightside {
-    height: 0vh;
-    display: none;
-  }
-}
-
-/* Adjust the homescreen artwork on ipads... */
-
-@media screen and (min-height: 1010px) and (max-width:769px) 
-{
-  .normalArt {
-    height: 70%;
-    width: 150%;
-    left: 0%;
-  }
-}
-
-/* Adjust the homescreen artwork on ipad pros... */
-
-@media screen and (min-height: 1110px) and (max-width:840px) 
-{
-  .normalArt {
-    height: 80%;
-    width: 150%;
-    left: -20%;
-  }
-}
-
-/* Adjust the homescreen artwork on phablets... */
-
-@media screen and (max-height: 900px) and (max-width:415px) 
-{
-  .normalArt {
-    height: 80%;
-    width: 210%;
-    left: -40%;
-  }
-}
-
 
 /* PROJECTS PAGE */
 
 /* Projects header */
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.projectsHeaderImage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .projectsHeader {
   position: relative;
@@ -298,38 +76,45 @@ footer {
   color: #ffffff;
 }
 
-.projectsHeaderImage {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .projectsHeaderLogo {
   position: relative;
-  max-width: 250px;
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 10px;
-  margin-bottom: 30px;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
   width: 40%;
+  max-width: 200px;
 }
 
 .projectsHeaderText {
   display: inline-block;
-  position: absolute;
-  text-align: right;
-  line-height: 0.9;
-  margin-top: 3%;
-  margin-right: 20px;
+  position: relative;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
+
 
 .projectsHeaderTitle {
   font-weight: 600;
   display: inline-block;
-  font-size: calc(24px + 6vw);
+  font-size: calc(24px + 4vw);
   letter-spacing: -2px;
+  line-height: 0.9;
+  margin-bottom: 40px;
 }
+
+
+.projectsHeader p {
+  font-size: calc(16px + 0.5vw);
+  font-weight: 100;
+}
+
+
+
+
 
 .projectsSub {
   display: grid;
@@ -398,21 +183,10 @@ footer {
 /* Responsive layout - small screens */
 @media screen and (max-width: 544px){
 
-  .projectsHeaderLogo {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
-
   .projectsHeaderText {
     position: relative;
     text-align: center;
     line-height: 0.95;
-    margin-top: 2px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -600,17 +374,6 @@ footer {
 
 
 /* The floating contact button */
-
-.contactIcon {
-  width: 75%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .contactButton {
   z-index: 995;
   display: absolute;
@@ -628,15 +391,41 @@ footer {
   transition-duration: 0.4s;
 }
 
+.contactIcon {
+  width: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.contactCross {
+  z-index: 994;
+  display: absolute;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  opacity: 0;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+
 .contactNav {
   transform: scale(0,0);
   transition: all 0.3s ease-in-out;
   transform-origin: bottom right;
   -webkit-transition-duration: 0.4s; /* Safari */
 
-  z-index: 994;
+  z-index: 993;
   display: inline-block;
   position: fixed;
+  padding-top: 10px;
   bottom:50px;
   right:50px;
   opacity: 0;
@@ -644,17 +433,25 @@ footer {
   text-align: left;
   background: #272227;
   border-radius: 16px;
-  height: 230px;
-  width: 180px;
+  height: 400px;
+  width: 210px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   cursor: pointer;
 }
+
+.contactNavLogo {
+  position: relative;
+  width: 70px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 
 .contactNav a{
   padding: 12px 12px 12px 20px;
   text-decoration: none;
   font-size: 26px;
-  line-height: 95%;
+  line-height: 120%;
   letter-spacing: 90%;
   color: #f1ebe5;
   display: block;
@@ -663,12 +460,17 @@ footer {
 
 .contactNav a:hover {
 
-  color: #9D2EC5;
+  color: #e8a56e;
 }
 
 #toggle {
 
   display: none;
+}
+
+#toggle:checked ~ .contactCross {
+  transform: rotate(90deg);
+  opacity: 1;
 }
 
 #toggle:checked ~ .contactNav {
@@ -678,7 +480,7 @@ footer {
 
 #toggle:checked ~ .contactButton {
   transform: rotate(-270deg);
-  opacity: 1;
+  opacity: 0;
   box-shadow: 0 0 0 0 transparent;
   background-color: #8a443c;
 }
@@ -704,9 +506,13 @@ footer {
 /* The side navigation menu */
 .hamburgerIcon {
   z-index: 999;
-  position:absolute;
-  padding-top: 15px; /* Place content 15px from the top */
-  padding-left: 20px; /* Place content 20px from the left */
+  position:fixed;
+  top: 0px;
+  right: 0px;
+  height: 120px;
+  width: 120px;
+  padding-top: 0px; /* Place content 15px from the top */
+  padding-left: 0px; /* Place content 20px from the left */
   transition: 0.5s;
 }
 

@@ -7,6 +7,8 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair-Display' rel='stylesheet'>
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
 	<script src="{{url_for('static', filename='script.js')}}"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +28,7 @@
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-	<div id="sidebar">
+<!-- 	<div id="sidebar">
 	    <li id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -39,26 +41,32 @@
 			<a href="https://towardsdatascience.com/@callumballard" target="_blank" class="hline">For Farmers</a>
 		</li>
 
-		<!-- Use any element to open the sidenav -->
-		<!--span onclick="openNav()">open</span>-->
 		<img id="myHamburger" class="hamburgerIcon"
 		src="{{url_for('static', filename='image_menu_bars.png')}}"
 		alt="MENU"
 		width="60" height="70"
 		onclick="openNav()">
     </div>
-
+ -->
 
 
 	<div class="contactContainer">
 	  <input type="checkbox" id="toggle" />
 	    <label class="contactButton" for="toggle">
-	    	<img src="{{url_for('static', filename='image_chat.png')}}" alt="Contact" class="contactIcon">
+	    	<img src="{{url_for('static', filename='image_menu_bars.png')}}" alt="Contact" class="contactIcon">
 		</label>
+		<img src="{{url_for('static', filename='image_menu_cross.png')}}" alt="Contact" class="contactCross">
 		<div class="contactNav">
-			<a href="mailto:callumjballard@gmail.com?Subject=Hello%20CB91" target="_top">Send a message</a>
-				<a href="https://www.linkedin.com/in/callum-ballard/" target="_blank">Connect on LinkedIn</a>
-			<a href="https://towardsdatascience.com/@callumballard" target="_blank">Follow on Medium</a>
+			 <a href="/home" class="hline"><img src="{{url_for('static', filename='fallow_logo_alpha.png')}}" alt="Fallow" class="contactNavLogo"></a>
+			<a href="/projects" class="hline">For Fallowers</a>
+			<hr width="80%">
+			<a href="/cv" class="hline">For Farmers</a>
+			<hr width="80%">
+			<a href="https://towardsdatascience.com/@callumballard" target="_blank" class="hline">For Leaders</a>
+			<hr width="80%">
+			<a href="https://towardsdatascience.com/@callumballard" target="_blank" class="hline">About Us</a>
+			<hr width="80%">
+			<a href="https://towardsdatascience.com/@callumballard" target="_blank" class="hline">Contact</a>
 		</div>
 	</div>
 
