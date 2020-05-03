@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="projectHead">
+  <img src="{{url_for('static', filename='image_records.png')}}" alt="CB91" class="projectHeadImage">
+  <div class="projectHeadText">
+    <span class="highlightedText">investigating the "difficult third album" phenomenon</span>
+  </div>
+</div>
+
+<div class="projectContent">
+  <!--Add back to project button-->
+  <a href="/projects" class="backToProjects">BACK TO PROJECTS</a>
+
+  <h1>the motivation</h1>
+  <p>The "Difficult Third Album" is a well known phenomenon in the music industry, describing the problems that bands have when recording their third releases.
+  <p></p>
+  <p>
+  There are certainly notable examples of this (as fans of early 00s staples The Strokes and Franz Ferdinand can attest), but is the decline in quality between albums two and three an inevitability (or at least statistically significant)?</p>
+
+  <h1>the approach</h1>
+  <p>Though the 'quality' of an album is, of course, subjective, we can look to review aggregator <a href="https://www.metacritic.com/music" target="_blank">Metacritic</a>, which calculates a weighted average of different critic reviews for each album. This Metascore is thus a reliable measure we have for an album's ‘true’ quality.</p>
+  <p></p>
+  <p>We can scrape data for each album on Metacritic, including, amongst other things, its Metascore, its release date, and its genre. Having stored this information in a Pandas dataframe, we can filter for rock artists, and work out whether an album was a band's debut, their second release, or their third, etc.</p>
+  <p></p>
+
+  <img src="{{url_for('static', filename='image_albumsdf.png')}}" alt="Albums Dataframe" class="inlineImage">
+
+  <p></p>
+  <p>We can then calculate how an artist's metascores evolved over time, relative to their debut album (each line in the chart below represents one band).</p>
+  <p></p>
+
+  <img src="{{url_for('static', filename='image_jellyfish.png')}}" alt="Metascore Evolution" class="inlineImage">
+
+  <p></p>
+  <p>Though we see a drop off in Metascores after a band's debut album, we need to conduct a test to verify the statistical significance one way or the other. In this case, we can use Monte Carlo simulations.</p>
+  <p></p>
+
+  <h1>the findings</h1>
+  <p>We conduct three experiments. First, we compare the scores of third albums against scores of first and second albums. Indeed, we find a statistically significant difference.</p>
+
+  <p></p>
+  <img src="{{url_for('static', filename='image_pdf_albums0.png')}}" alt="Hypothesis Test" class="inlineImage">
+  <p></p>
+  <p>However, there isn't a statistically significant drop in Metascore between albums two and three.</p>
+  <p></p>
+  <img src="{{url_for('static', filename='image_pdf_albums1.png')}}" alt="Hypothesis Test" class="inlineImage">
+  <p></p>
+  <p>Instead, it seems that the drop in album quality we observed in Experiment 1 is in fact due to a statistically significant drop between albums one and two. So, far from the third album being the ‘difficult’ one, it seems that bands face an even greater challenge making their second.</p>
+  <p></p>
+  <img src="{{url_for('static', filename='image_pdf_albums2.png')}}" alt="Hypothesis Test" class="inlineImage">
+  
+  <h1>the techniques</h1>
+  <p>Analysis conducted using Python libraries and APIs:</p>  
+    <ul>
+      <li><span>Requests</span> and <span>BeautifulSoup4</span> for web scraping</li>
+      <li><span>Pandas</span> for data munging</li>
+      <li><span>Numpy</span> for creating the Monte Carlo simulation functions</li>
+      <li><span>Matplotlib</span> for data visualisation</li>
+    </ul>
+
+  <h1>the blog</h1>
+  <a class="blog" href="https://towardsdatascience.com/explaining-the-2019-uk-election-result-with-data-science-86aa6f4e8094" target="_blank">"The ‘Difficult Third Album’ is as good as folklore in the music industry. A band’s debut album has, for all intents and purposes, been under construction since their very inception. It sounds new and fresh, and it tends to come without the weight of expectation.</a>
+  <p></p>
+  <a class="blog" href="https://towardsdatascience.com/explaining-the-2019-uk-election-result-with-data-science-86aa6f4e8094" target="_blank">A band’s second album is then produced with the energy and confidence that comes from the success of the first. And even if a group’s sound hasn’t moved on that much from their debut, it’s unlikely that people will have tired of it after just one release (assuming it was good in the first place). So, if bands are able to knock out decent debuts and sophomores, what could make album number three so tough?..."</a>
+  <p></p>
+
+    <a class="blog" href="https://towardsdatascience.com/https-towardsdatascience-com-the-difficult-third-album-655d7a710412?" target="_blank">
+      <div class="blogEmbed">
+        <img src="{{url_for('static', filename='image_tds.jpg')}}" alt="TDS" class="tdsImage">
+        <img src="{{url_for('static', filename='image_blog_albums.jpg')}}" alt="The Killers" class="blogImage">
+        <a class="callumBlogLink" href="https://towardsdatascience.com/@callumballard" target="_blank">Follow Callum Ballard on Towards Data Science</a>
+        <h1>Can Monte Carlo Simulations Dispel the ‘Difficult Third Album’?</h1>
+        <h2>An introduction to permutation tests and Monte Carlo simulations using Python</h2>
+      </div>
+    </a>
+
+  <h1>the theory</h1>
+  <p>The hypothesis testing was conducted using Monte Carlo simulations.</p>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{url_for('static', filename='image_pdf_hypothesis0.jpg')}}" alt="Slide1">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{url_for('static', filename='image_pdf_hypothesis1.jpg')}}" alt="Slide2">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+  </div>
+  <p></p>
+  <p></p>
+  <p>Implementing this in Python requried a custom function, created using Numpy. Note - a gist for the subtract_array function used can be found <a href="https://gist.github.com/calbal91/151c1843aac989e3aa575bcf486bef4b" target="_blank">here</a>.</p>
+  <p></p>
+  <script src="https://gist.github.com/calbal91/3bf105cc3d061ce1ab60553b7e42987a.js"></script>
+
+</div>
+
+{% endblock content %}

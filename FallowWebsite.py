@@ -16,6 +16,13 @@ def farmers():
 def fallowers():
 	return render_template('fallowers.html', title='Fallowers')
 
+@app.route("/leaders")
+def leaders():
+	return render_template('leaders.html', title='Leaders')
+
+@app.route("/about")
+def about():
+	return render_template('about.html', title='About Fallow')
 
 if __name__ == '__main__':
 	app.run(debug=True)
