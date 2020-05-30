@@ -352,6 +352,8 @@ footer {
   font-size: calc(16px + 0.3vw);
   font-weight: 500;
   transition: 0.2s;
+  box-shadow: 0 0px 2px 0 rgba(0,0,0,0.4);
+
 }
 
 .active, .accordion:hover {
@@ -371,6 +373,7 @@ footer {
 }
 
 .panel {
+  font-size: calc(12px + 0.3vw);
   background-color: #272227;
   max-height: 0;
   overflow: hidden;
@@ -378,13 +381,22 @@ footer {
 }
 
 .panel p {
-  font-size: calc(12px + 0.3vw);
+  font-size: calc(4px + 0.3vw);
+  font-weight: 300;
   padding: 16px;
-  padding-top: 6px;
+  padding-top: 12px;
   padding-bottom: 6px;
   color: white;
 }
 
+.panel ul {
+  font-family: 'Roboto';
+  margin-left: 16px;
+  padding: 16px;
+  padding-top: 0px;
+  padding-bottom: 6px;
+  color: white;
+}
 
 
 .projectContent {
