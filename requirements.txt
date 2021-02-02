@@ -13,7 +13,7 @@ backports.os==0.1.1
 backports.shutil-get-terminal-size==1.0.0
 bitarray==0.8.3
 bkcharts==0.2
-bleach==3.1.0
+bleach==3.3.0
 boto==2.49.0
 boto3==1.11.6
 botocore==1.14.6
